@@ -5,10 +5,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UniversidadController;
 use App\Http\Controllers\AcademicoController;
 use App\Http\Controllers\AdmisionController;
+use App\Http\Controllers\InvestigacionController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UniversidadAdminController;
 use App\Http\Controllers\Admin\AcademicoAdminController;
 use App\Http\Controllers\Admin\AdmisionAdminController;
+use App\Http\Controllers\Admin\InvestigacionAdminController;
 use Illuminate\Support\Facades\Route;
 
 // Ruta pública de la página principal
@@ -30,6 +32,9 @@ Route::prefix('academico')->name('academico.')->group(function () {
 
 // Ruta pública de Admisión
 Route::get('/admision', [AdmisionController::class, 'index'])->name('admision');
+
+// Ruta pública de Investigación
+Route::get('/investigacion', [InvestigacionController::class, 'index'])->name('investigacion');
 
 // Dashboard de Breeze (redirigir al admin)
 Route::get('/dashboard', function () {
@@ -120,6 +125,49 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         Route::get('/proceso', [AdmisionAdminController::class, 'procesoIndex'])->name('proceso.index');
         Route::get('/proceso/{id}/edit', [AdmisionAdminController::class, 'procesoEdit'])->name('proceso.edit');
         Route::put('/proceso/{id}', [AdmisionAdminController::class, 'procesoUpdate'])->name('proceso.update');
+    });
+
+    // Gestión de Investigación
+    Route::prefix('investigacion')->name('investigacion.')->group(function () {
+        // Líneas de Investigación
+        Route::get('/lineas', [InvestigacionAdminController::class, 'lineasIndex'])->name('lineas.index');
+        Route::get('/lineas/create', [InvestigacionAdminController::class, 'lineasCreate'])->name('lineas.create');
+        Route::post('/lineas', [InvestigacionAdminController::class, 'lineasStore'])->name('lineas.store');
+        Route::get('/lineas/{id}/edit', [InvestigacionAdminController::class, 'lineasEdit'])->name('lineas.edit');
+        Route::put('/lineas/{id}', [InvestigacionAdminController::class, 'lineasUpdate'])->name('lineas.update');
+        Route::delete('/lineas/{id}', [InvestigacionAdminController::class, 'lineasDestroy'])->name('lineas.destroy');
+
+        // Proyectos
+        Route::get('/proyectos', [InvestigacionAdminController::class, 'proyectosIndex'])->name('proyectos.index');
+        Route::get('/proyectos/create', [InvestigacionAdminController::class, 'proyectosCreate'])->name('proyectos.create');
+        Route::post('/proyectos', [InvestigacionAdminController::class, 'proyectosStore'])->name('proyectos.store');
+        Route::get('/proyectos/{id}/edit', [InvestigacionAdminController::class, 'proyectosEdit'])->name('proyectos.edit');
+        Route::put('/proyectos/{id}', [InvestigacionAdminController::class, 'proyectosUpdate'])->name('proyectos.update');
+        Route::delete('/proyectos/{id}', [InvestigacionAdminController::class, 'proyectosDestroy'])->name('proyectos.destroy');
+
+        // Investigadores
+        Route::get('/investigadores', [InvestigacionAdminController::class, 'investigadoresIndex'])->name('investigadores.index');
+        Route::get('/investigadores/create', [InvestigacionAdminController::class, 'investigadoresCreate'])->name('investigadores.create');
+        Route::post('/investigadores', [InvestigacionAdminController::class, 'investigadoresStore'])->name('investigadores.store');
+        Route::get('/investigadores/{id}/edit', [InvestigacionAdminController::class, 'investigadoresEdit'])->name('investigadores.edit');
+        Route::put('/investigadores/{id}', [InvestigacionAdminController::class, 'investigadoresUpdate'])->name('investigadores.update');
+        Route::delete('/investigadores/{id}', [InvestigacionAdminController::class, 'investigadoresDestroy'])->name('investigadores.destroy');
+
+        // Publicaciones
+        Route::get('/publicaciones', [InvestigacionAdminController::class, 'publicacionesIndex'])->name('publicaciones.index');
+        Route::get('/publicaciones/create', [InvestigacionAdminController::class, 'publicacionesCreate'])->name('publicaciones.create');
+        Route::post('/publicaciones', [InvestigacionAdminController::class, 'publicacionesStore'])->name('publicaciones.store');
+        Route::get('/publicaciones/{id}/edit', [InvestigacionAdminController::class, 'publicacionesEdit'])->name('publicaciones.edit');
+        Route::put('/publicaciones/{id}', [InvestigacionAdminController::class, 'publicacionesUpdate'])->name('publicaciones.update');
+        Route::delete('/publicaciones/{id}', [InvestigacionAdminController::class, 'publicacionesDestroy'])->name('publicaciones.destroy');
+
+        // Grupos de Investigación
+        Route::get('/grupos', [InvestigacionAdminController::class, 'gruposIndex'])->name('grupos.index');
+        Route::get('/grupos/create', [InvestigacionAdminController::class, 'gruposCreate'])->name('grupos.create');
+        Route::post('/grupos', [InvestigacionAdminController::class, 'gruposStore'])->name('grupos.store');
+        Route::get('/grupos/{id}/edit', [InvestigacionAdminController::class, 'gruposEdit'])->name('grupos.edit');
+        Route::put('/grupos/{id}', [InvestigacionAdminController::class, 'gruposUpdate'])->name('grupos.update');
+        Route::delete('/grupos/{id}', [InvestigacionAdminController::class, 'gruposDestroy'])->name('grupos.destroy');
     });
 });
 

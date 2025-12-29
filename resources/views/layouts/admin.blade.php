@@ -244,6 +244,49 @@
                             </ul>
                         </li>
 
+                        <!-- Investigación -->
+                        <li class="nav-item {{ request()->routeIs('admin.investigacion.*') ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ request()->routeIs('admin.investigacion.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-flask"></i>
+                                <p>
+                                    Investigación
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.investigacion.lineas.index') }}" class="nav-link {{ request()->routeIs('admin.investigacion.lineas.*') ? 'active' : '' }}">
+                                        <i class="fas fa-stream nav-icon"></i>
+                                        <p>Líneas de Investigación</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.investigacion.proyectos.index') }}" class="nav-link {{ request()->routeIs('admin.investigacion.proyectos.*') ? 'active' : '' }}">
+                                        <i class="fas fa-project-diagram nav-icon"></i>
+                                        <p>Proyectos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.investigacion.investigadores.index') }}" class="nav-link {{ request()->routeIs('admin.investigacion.investigadores.*') ? 'active' : '' }}">
+                                        <i class="fas fa-user-tie nav-icon"></i>
+                                        <p>Investigadores</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.investigacion.publicaciones.index') }}" class="nav-link {{ request()->routeIs('admin.investigacion.publicaciones.*') ? 'active' : '' }}">
+                                        <i class="fas fa-file-alt nav-icon"></i>
+                                        <p>Publicaciones</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.investigacion.grupos.index') }}" class="nav-link {{ request()->routeIs('admin.investigacion.grupos.*') ? 'active' : '' }}">
+                                        <i class="fas fa-users-cog nav-icon"></i>
+                                        <p>Grupos de Investigación</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="nav-header">CONFIGURACIÓN</li>
 
                         <!-- Usuarios -->
