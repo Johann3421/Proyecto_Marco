@@ -1,0 +1,239 @@
+/* Custom Styles for University Website */
+:root {
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
+    --accent-color: #ffc107;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    font-size: 0.875rem;
+}
+
+.top-bar a {
+    transition: opacity 0.3s ease;
+}
+
+.top-bar a:hover {
+    opacity: 0.8;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #333 !important;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Stats Section */
+.stat-card {
+    background: white;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Image Placeholders */
+.hero-image-placeholder,
+.facultad-image-placeholder,
+.noticia-image-placeholder,
+.investigacion-image-placeholder,
+.admision-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover .facultad-image-placeholder,
+.hover-card:hover .noticia-image-placeholder {
+    transform: scale(1.05);
+}
+
+/* Badge Styles */
+.badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: auto;
+}
+
+footer h5, footer h6 {
+    color: #ffffff;
+}
+
+footer a.hover-link {
+    transition: all 0.3s ease;
+}
+
+footer a.hover-link:hover {
+    color: #ffffff !important;
+    padding-left: 5px;
+}
+
+footer .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Section Spacing */
+section {
+    position: relative;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto !important;
+        padding: 3rem 0;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .display-5 {
+        font-size: 1.75rem;
+    }
+    
+    .navbar-brand h4 {
+        font-size: 1.25rem;
+    }
+    
+    .stat-card h3 {
+        font-size: 2rem;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+::-moz-selection {
+    background-color: var(--primary-color);
+    color: white;
+}
