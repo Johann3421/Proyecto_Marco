@@ -4,9 +4,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UniversidadController;
 use App\Http\Controllers\AcademicoController;
+use App\Http\Controllers\AdmisionController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UniversidadAdminController;
 use App\Http\Controllers\Admin\AcademicoAdminController;
+use App\Http\Controllers\Admin\AdmisionAdminController;
 use Illuminate\Support\Facades\Route;
 
 // Ruta pública de la página principal
@@ -25,6 +27,9 @@ Route::prefix('academico')->name('academico.')->group(function () {
     Route::get('/escuelas', [AcademicoController::class, 'escuelas'])->name('escuelas');
     Route::get('/posgrado', [AcademicoController::class, 'posgrado'])->name('posgrado');
 });
+
+// Ruta pública de Admisión
+Route::get('/admision', [AdmisionController::class, 'index'])->name('admision');
 
 // Dashboard de Breeze (redirigir al admin)
 Route::get('/dashboard', function () {
@@ -83,6 +88,38 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         Route::get('/posgrado/{id}/edit', [AcademicoAdminController::class, 'posgradoEdit'])->name('posgrado.edit');
         Route::put('/posgrado/{id}', [AcademicoAdminController::class, 'posgradoUpdate'])->name('posgrado.update');
         Route::delete('/posgrado/{id}', [AcademicoAdminController::class, 'posgradoDestroy'])->name('posgrado.destroy');
+    });
+
+    // Gestión de Admisión
+    Route::prefix('admision')->name('admision.')->group(function () {
+        // Modalidades de Ingreso
+        Route::get('/modalidades', [AdmisionAdminController::class, 'modalidadesIndex'])->name('modalidades.index');
+        Route::get('/modalidades/create', [AdmisionAdminController::class, 'modalidadesCreate'])->name('modalidades.create');
+        Route::post('/modalidades', [AdmisionAdminController::class, 'modalidadesStore'])->name('modalidades.store');
+        Route::get('/modalidades/{id}/edit', [AdmisionAdminController::class, 'modalidadesEdit'])->name('modalidades.edit');
+        Route::put('/modalidades/{id}', [AdmisionAdminController::class, 'modalidadesUpdate'])->name('modalidades.update');
+        Route::delete('/modalidades/{id}', [AdmisionAdminController::class, 'modalidadesDestroy'])->name('modalidades.destroy');
+
+        // Calendario de Admisión
+        Route::get('/calendario', [AdmisionAdminController::class, 'calendarioIndex'])->name('calendario.index');
+        Route::get('/calendario/create', [AdmisionAdminController::class, 'calendarioCreate'])->name('calendario.create');
+        Route::post('/calendario', [AdmisionAdminController::class, 'calendarioStore'])->name('calendario.store');
+        Route::get('/calendario/{id}/edit', [AdmisionAdminController::class, 'calendarioEdit'])->name('calendario.edit');
+        Route::put('/calendario/{id}', [AdmisionAdminController::class, 'calendarioUpdate'])->name('calendario.update');
+        Route::delete('/calendario/{id}', [AdmisionAdminController::class, 'calendarioDestroy'])->name('calendario.destroy');
+
+        // Preguntas Frecuentes
+        Route::get('/faqs', [AdmisionAdminController::class, 'faqsIndex'])->name('faqs.index');
+        Route::get('/faqs/create', [AdmisionAdminController::class, 'faqsCreate'])->name('faqs.create');
+        Route::post('/faqs', [AdmisionAdminController::class, 'faqsStore'])->name('faqs.store');
+        Route::get('/faqs/{id}/edit', [AdmisionAdminController::class, 'faqsEdit'])->name('faqs.edit');
+        Route::put('/faqs/{id}', [AdmisionAdminController::class, 'faqsUpdate'])->name('faqs.update');
+        Route::delete('/faqs/{id}', [AdmisionAdminController::class, 'faqsDestroy'])->name('faqs.destroy');
+
+        // Proceso de Admisión (Solo edición)
+        Route::get('/proceso', [AdmisionAdminController::class, 'procesoIndex'])->name('proceso.index');
+        Route::get('/proceso/{id}/edit', [AdmisionAdminController::class, 'procesoEdit'])->name('proceso.edit');
+        Route::put('/proceso/{id}', [AdmisionAdminController::class, 'procesoUpdate'])->name('proceso.update');
     });
 });
 

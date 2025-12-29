@@ -207,6 +207,43 @@
                             </ul>
                         </li>
 
+                        <!-- Admisión -->
+                        <li class="nav-item {{ request()->routeIs('admin.admision.*') ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ request()->routeIs('admin.admision.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-user-graduate"></i>
+                                <p>
+                                    Admisión
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.admision.modalidades.index') }}" class="nav-link {{ request()->routeIs('admin.admision.modalidades.*') ? 'active' : '' }}">
+                                        <i class="fas fa-door-open nav-icon"></i>
+                                        <p>Modalidades</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.admision.proceso.index') }}" class="nav-link {{ request()->routeIs('admin.admision.proceso.*') ? 'active' : '' }}">
+                                        <i class="fas fa-list-ol nav-icon"></i>
+                                        <p>Proceso de Admisión</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.admision.calendario.index') }}" class="nav-link {{ request()->routeIs('admin.admision.calendario.*') ? 'active' : '' }}">
+                                        <i class="fas fa-calendar-alt nav-icon"></i>
+                                        <p>Calendario</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.admision.faqs.index') }}" class="nav-link {{ request()->routeIs('admin.admision.faqs.*') ? 'active' : '' }}">
+                                        <i class="fas fa-question-circle nav-icon"></i>
+                                        <p>Preguntas Frecuentes</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="nav-header">CONFIGURACIÓN</li>
 
                         <!-- Usuarios -->

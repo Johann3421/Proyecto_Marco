@@ -86,7 +86,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold" href="#admision">Admisión</a>
+                        <a class="nav-link fw-semibold" href="{{ route('admision') }}">Admisión</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fw-semibold" href="#investigacion">Investigación</a>
