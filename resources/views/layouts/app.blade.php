@@ -92,10 +92,10 @@
                         <a class="nav-link fw-semibold" href="{{ route('investigacion') }}">Investigación</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold" href="#noticias">Noticias</a>
+                        <a class="nav-link fw-semibold" href="{{ route('noticias.index') }}">Noticias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold" href="#contacto">Contacto</a>
+                        <a class="nav-link fw-semibold" href="{{ route('contacto.index') }}">Contacto</a>
                     </li>
                 </ul>
             </div>

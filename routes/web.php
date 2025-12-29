@@ -6,11 +6,15 @@ use App\Http\Controllers\UniversidadController;
 use App\Http\Controllers\AcademicoController;
 use App\Http\Controllers\AdmisionController;
 use App\Http\Controllers\InvestigacionController;
+use App\Http\Controllers\NoticiasController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UniversidadAdminController;
 use App\Http\Controllers\Admin\AcademicoAdminController;
 use App\Http\Controllers\Admin\AdmisionAdminController;
 use App\Http\Controllers\Admin\InvestigacionAdminController;
+use App\Http\Controllers\Admin\NoticiasAdminController;
+use App\Http\Controllers\Admin\ContactoAdminController;
 use Illuminate\Support\Facades\Route;
 
 // Ruta pública de la página principal
@@ -35,6 +39,14 @@ Route::get('/admision', [AdmisionController::class, 'index'])->name('admision');
 
 // Ruta pública de Investigación
 Route::get('/investigacion', [InvestigacionController::class, 'index'])->name('investigacion');
+
+// Rutas públicas de Noticias
+Route::get('/noticias', [NoticiasController::class, 'index'])->name('noticias.index');
+Route::get('/noticias/{id}', [NoticiasController::class, 'show'])->name('noticias.show');
+
+// Rutas públicas de Contacto
+Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto.index');
+Route::post('/contacto/enviar', [ContactoController::class, 'enviar'])->name('contacto.enviar');
 
 // Dashboard de Breeze (redirigir al admin)
 Route::get('/dashboard', function () {
@@ -168,6 +180,34 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
         Route::get('/grupos/{id}/edit', [InvestigacionAdminController::class, 'gruposEdit'])->name('grupos.edit');
         Route::put('/grupos/{id}', [InvestigacionAdminController::class, 'gruposUpdate'])->name('grupos.update');
         Route::delete('/grupos/{id}', [InvestigacionAdminController::class, 'gruposDestroy'])->name('grupos.destroy');
+    });
+
+    // Gestión de Noticias
+    Route::prefix('noticias')->name('noticias.')->group(function () {
+        // Noticias
+        Route::get('/noticias', [NoticiasAdminController::class, 'noticiasIndex'])->name('noticias.index');
+        Route::get('/noticias/create', [NoticiasAdminController::class, 'noticiasCreate'])->name('noticias.create');
+        Route::post('/noticias', [NoticiasAdminController::class, 'noticiasStore'])->name('noticias.store');
+        Route::get('/noticias/{id}/edit', [NoticiasAdminController::class, 'noticiasEdit'])->name('noticias.edit');
+        Route::put('/noticias/{id}', [NoticiasAdminController::class, 'noticiasUpdate'])->name('noticias.update');
+        Route::delete('/noticias/{id}', [NoticiasAdminController::class, 'noticiasDestroy'])->name('noticias.destroy');
+
+        // Categorías
+        Route::get('/categorias', [NoticiasAdminController::class, 'categoriasIndex'])->name('categorias.index');
+        Route::get('/categorias/create', [NoticiasAdminController::class, 'categoriasCreate'])->name('categorias.create');
+        Route::post('/categorias', [NoticiasAdminController::class, 'categoriasStore'])->name('categorias.store');
+        Route::get('/categorias/{id}/edit', [NoticiasAdminController::class, 'categoriasEdit'])->name('categorias.edit');
+        Route::put('/categorias/{id}', [NoticiasAdminController::class, 'categoriasUpdate'])->name('categorias.update');
+        Route::delete('/categorias/{id}', [NoticiasAdminController::class, 'categoriasDestroy'])->name('categorias.destroy');
+    });
+
+    // Gestión de Contacto
+    Route::prefix('contacto')->name('contacto.')->group(function () {
+        Route::get('/', [ContactoAdminController::class, 'index'])->name('index');
+        Route::get('/{id}', [ContactoAdminController::class, 'show'])->name('show');
+        Route::patch('/{id}/estado', [ContactoAdminController::class, 'updateEstado'])->name('updateEstado');
+        Route::patch('/{id}/marcar-leido', [ContactoAdminController::class, 'marcarLeido'])->name('marcarLeido');
+        Route::delete('/{id}', [ContactoAdminController::class, 'destroy'])->name('destroy');
     });
 });
 

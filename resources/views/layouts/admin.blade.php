@@ -287,6 +287,51 @@
                             </ul>
                         </li>
 
+                        <!-- Noticias -->
+                        <li class="nav-item {{ request()->routeIs('admin.noticias.*') ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ request()->routeIs('admin.noticias.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-newspaper"></i>
+                                <p>
+                                    Noticias
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.noticias.noticias.index') }}"
+                                       class="nav-link {{ request()->routeIs('admin.noticias.noticias.*') ? 'active' : '' }}">
+                                        <i class="far fa-newspaper nav-icon"></i>
+                                        <p>Todas las Noticias</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.noticias.categorias.index') }}"
+                                       class="nav-link {{ request()->routeIs('admin.noticias.categorias.*') ? 'active' : '' }}">
+                                        <i class="far fa-folder nav-icon"></i>
+                                        <p>Categorías</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Contacto -->
+                        <li class="nav-item {{ request()->routeIs('admin.contacto.*') ? 'menu-open' : '' }}">
+                            <a href="{{ route('admin.contacto.index') }}"
+                               class="nav-link {{ request()->routeIs('admin.contacto.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-inbox"></i>
+                                <p>
+                                    Mensajes de Contacto
+                                    @php
+                                        $mensajes = session('mensajes_contacto', []);
+                                        $noLeidos = count(array_filter($mensajes, fn($m) => !$m['leido']));
+                                    @endphp
+                                    @if($noLeidos > 0)
+                                        <span class="badge badge-warning right">{{ $noLeidos }}</span>
+                                    @endif
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">CONFIGURACIÓN</li>
 
                         <!-- Usuarios -->

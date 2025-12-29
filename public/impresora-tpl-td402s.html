@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresora térmica de etiquetas adhesivas para códigos de barra TPL TD402S - JPSYSTEMS</title>
+    <link rel="stylesheet" href="https://jpsystems.pe/wp-content/themes/flatsome/assets/css/flatsome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRaleway:400,600,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
+            background: #fff;
+        }
+
+        a {
+            color: #446084;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #000;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        .header-wrapper {
+            background: #fff;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .header-main {
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            max-height: 50px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .header-nav a {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .02em;
+            color: #222;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-section {
+            background: #f5f5f5;
+            padding: 10px 0;
+            font-size: 13px;
+        }
+
+        .breadcrumb {
+            list-style: none;
+            display: flex;
+            gap: 5px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .breadcrumb li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb li:not(:last-child):after {
+            content: "›";
+            margin: 0 8px;
+            color: #999;
+        }
+
+        .breadcrumb a {
+            color: #777;
+        }
+
+        .breadcrumb .active {
+            color: #333;
+        }
+
+        /* Product Section */
+        .product-container {
+            padding: 30px 0 50px;
+        }
+
+        .product-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Product Images */
+        .product-gallery {
+            position: relative;
+        }
+
+        .product-gallery-main {
+            margin-bottom: 15px;
+            position: relative;
+            background: #f8f8f8;
+            border: 1px solid #e8e8e8;
+        }
+
+        .product-gallery-main img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-gallery-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .product-gallery-thumbnails img {
+            width: 100%;
+            height: 70px;
+            object-fit: cover;
+            border: 2px solid #e8e8e8;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .product-gallery-thumbnails img:hover,
+        .product-gallery-thumbnails img.active {
+            border-color: #446084;
+        }
+
+        /* Product Info */
+        .product-info {
+            padding-top: 10px;
+        }
+
+        .product-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #000;
+            margin: 0 0 15px;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .product-meta span {
+            margin-right: 15px;
+        }
+
+        .product-short-description {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .product-short-description p {
+            margin-bottom: 10px;
+        }
+
+        .product-short-description strong {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .product-actions {
+            margin: 25px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+            border: none;
+            cursor: pointer;
+            transition: all .3s;
+            text-align: center;
+            margin: 5px 5px 5px 0;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #fff;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ebc59;
+            color: #fff;
+        }
+
+        .btn-quote {
+            background: #446084;
+            color: #fff;
+        }
+
+        .btn-quote:hover {
+            background: #334b69;
+            color: #fff;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        /* Features */
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .feature-box {
+            background: #f8f8f8;
+            padding: 20px;
+            border-left: 3px solid #446084;
+        }
+
+        .feature-box i {
+            font-size: 28px;
+            color: #446084;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feature-box h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            margin: 0 0 5px;
+        }
+
+        .feature-box p {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Product Tabs */
+        .product-tabs {
+            margin-top: 50px;
+        }
+
+        .tab-nav {
+            border-bottom: 2px solid #ececec;
+            display: flex;
+            gap: 0;
+            list-style: none;
+            margin: 0 0 30px;
+            padding: 0;
+        }
+
+        .tab-nav li {
+            margin: 0;
+        }
+
+        .tab-nav a {
+            display: block;
+            padding: 15px 25px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #666;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab-nav a.active,
+        .tab-nav a:hover {
+            color: #000;
+            border-bottom-color: #446084;
+        }
+
+        .tab-content {
+            padding: 0;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* Specifications Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .specs-table thead {
+            background: #446084;
+            color: #fff;
+        }
+
+        .specs-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .specs-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .specs-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .specs-table .category-row {
+            background: #f5f5f5;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .specs-table .category-row td {
+            padding: 12px 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #242424;
+            color: #999;
+            padding: 50px 0 20px;
+            font-size: 13px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+        }
+
+        .footer p {
+            margin: 0 0 10px;
+            line-height: 1.8;
+        }
+
+        .footer a {
+            color: #999;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            transition: all .3s;
+        }
+
+        .social-icons a:hover {
+            background: #446084;
+            color: #fff;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            background: #446084;
+            color: #fff;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+        }
+
+        .warranty-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #28a745;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        .warranty-badge i {
+            margin-right: 8px;
+        }
+
+        /* Info boxes */
+        .info-boxes {
+            background: #f8f8f8;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #446084;
+        }
+
+        .info-boxes h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 15px;
+            color: #000;
+        }
+
+        .info-boxes ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .info-boxes li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .info-boxes li:last-child {
+            border-bottom: none;
+        }
+
+        .info-boxes i {
+            color: #28a745;
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-main {
+                grid-template-columns: 1fr;
+            }
+
+            .product-gallery-thumbnails {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .product-features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .tab-nav {
+                flex-wrap: wrap;
+            }
+
+            .tab-nav a {
+                padding: 12px 15px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-gallery-thumbnails {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 12px;
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-wrapper">
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">
+                    <a href="https://jpsystems.pe">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2019/07/LOGO-JPSYSTEMS-BLANCO.png" alt="JPSYSTEMS" style="filter: invert(1);">
+                    </a>
+                </div>
+                <nav>
+                    <ul class="header-nav">
+                        <li><a href="https://jpsystems.pe">INICIO</a></li>
+                        <li><a href="https://jpsystems.pe/tienda">COMPRA AQUÍ</a></li>
+                        <li><a href="https://jpsystems.pe/contactanos">CONTÁCTANOS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="https://jpsystems.pe">INICIO</a></li>
+                <li><a href="https://jpsystems.pe/tienda">TIENDA</a></li>
+                <li><a href="https://jpsystems.pe/product-category/impresoras">IMPRESORAS</a></li>
+                <li><a href="https://jpsystems.pe/product-category/impresoras/etiquetas">ETIQUETAS</a></li>
+                <li class="active">IMPRESORA TÉRMICA DE ETIQUETAS ADHESIVAS PARA CÓDIGOS DE BARRA TPL TD402S</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Product Container -->
+    <div class="product-container">
+        <div class="container">
+            <div class="product-main">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="product-gallery-main">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD402S-1-600x600.jpg"
+                             alt="Impresora TPL TD402S"
+                             id="mainImage">
+                    </div>
+                    <div class="product-gallery-thumbnails">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD402S-1-300x300.jpg"
+                             class="active"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD420-7-B-300x300.png"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD420-5-300x300.jpg"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD420-6-300x300.jpg"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD420-8-B-300x300.png"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD420-10-B-300x300.png"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD420-9-B-300x300.png"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD420-12-300x300.jpg"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/TD420-11-300x291.jpg"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/red2-300x300.jpg"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/red3-300x300.jpg"
+                             onclick="changeImage(this)">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2024/10/red4-300x300.jpg"
+                             onclick="changeImage(this)">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1 class="product-title">Impresora térmica de etiquetas adhesivas para códigos de barra TPL TD402S</h1>
+
+                    <div class="product-meta">
+                        <span><strong>SKU:</strong> XP045EL02H599LPE</span>
+                        <span><strong>Marca:</strong> <span class="badge">TPL</span></span>
+                    </div>
+
+                    <div class="warranty-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        1 año de garantía
+                    </div>
+
+                    <div class="product-short-description">
+                        <p><strong>IMPRESORA TÉRMICA DE ETIQUETAS PARA CÓDIGOS DE BARRA</strong></p>
+                        <p>Impresora escritorio térmica USB+Bluetooth+WIFI 25-108mm TPL TD402S</p>
+                        <p><strong>Marca:</strong> TPL <strong>|</strong> <strong>Modelo:</strong> TD402S</p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="product-features">
+                        <div class="feature-box">
+                            <i class="fas fa-wifi"></i>
+                            <h4>Conectividad Triple</h4>
+                            <p>USB + Bluetooth + WIFI</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4>Alta Velocidad</h4>
+                            <p>Hasta 152 mm/s</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <h4>Ancho Variable</h4>
+                            <p>25-108mm</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-qrcode"></i>
+                            <h4>Códigos 1D y 2D</h4>
+                            <p>Compatible con múltiples formatos</p>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="product-actions">
+                        <a href="https://api.whatsapp.com/send?phone=51990096126&text=Quiero%20información%20del%20producto:%20Impresora%20térmica%20de%20etiquetas%20adhesivas%20para%20códigos%20de%20barra%20TPL%20TD402S"
+                           class="btn btn-whatsapp"
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            Consultar por WhatsApp
+                        </a>
+                        <button class="btn btn-quote">
+                            <i class="fas fa-file-invoice"></i>
+                            Solicitar Cotización
+                        </button>
+                    </div>
+
+                    <!-- Info Boxes -->
+                    <div class="info-boxes">
+                        <h4><i class="fas fa-check-circle"></i> Nuestros Servicios</h4>
+                        <ul>
+                            <li><i class="fas fa-receipt"></i> Incluye IGV</li>
+                            <li><i class="fas fa-file-invoice"></i> Entregamos Boleta/Factura</li>
+                            <li><i class="fas fa-truck"></i> Envíos a todo el PERÚ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <ul class="tab-nav">
+                    <li><a href="#" class="active" onclick="showTab(event, 'specs')">Especificaciones</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="specs" class="tab-panel active">
+                        <table class="specs-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40%;">Característica</th>
+                                    <th>Especificación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="category-row">
+                                    <td colspan="2">Características de impresión</td>
+                                </tr>
+                                <tr>
+                                    <td>Modelo</td>
+                                    <td>TD402S</td>
+                                </tr>
+                                <tr>
+                                    <td>Resolución</td>
+                                    <td>203 dpi</td>
+                                </tr>
+                                <tr>
+                                    <td>Método de impresión</td>
+                                    <td>Térmico directo</td>
+                                </tr>
+                                <tr>
+                                    <td>Velocidad máxima</td>
+                                    <td>152 mm (6″) / s max.</td>
+                                </tr>
+                                <tr>
+                                    <td>Ancho máximo</td>
+                                    <td>108 mm (4.25 «)</td>
+                                </tr>
+                                <tr class="category-row">
+                                    <td colspan="2">Características del rollo</td>
+                                </tr>
+                                <tr>
+                                    <td>Tipo de rollo</td>
+                                    <td>Continuo, brecha, marca negra, fan plegable y agujero perforado</td>
+                                </tr>
+                                <tr>
+                                    <td>Ancho de rollo</td>
+                                    <td>30 mm ~ 1150mm</td>
+                                </tr>
+                                <tr>
+                                    <td>Grosor de material del rollo</td>
+                                    <td>0.06 ~ 0.254 mm</td>
+                                </tr>
+                                <tr>
+                                    <td>Diámetro interno del rollo</td>
+                                    <td>25.4 ~ 76.2 mm (1″~ 3″)</td>
+                                </tr>
+                                <tr>
+                                    <td>Longitud de rollo total</td>
+                                    <td>10 mm ~ 1778 mm</td>
+                                </tr>
+                                <tr class="category-row">
+                                    <td colspan="2">Características de rendimiento</td>
+                                </tr>
+                                <tr>
+                                    <td>Procesador</td>
+                                    <td>CPU de 32 bits</td>
+                                </tr>
+                                <tr>
+                                    <td>Memoria</td>
+                                    <td>La memoria flash de 8MB y el SDRAM de 8MB</td>
+                                </tr>
+                                <tr>
+                                    <td>Interfaz</td>
+                                    <td>USB+Bluetooth+WIFI</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensores</td>
+                                    <td>Sensor GAP, Sensor de apertura, Sensor de marca BLACK</td>
+                                </tr>
+                                <tr class="category-row">
+                                    <td colspan="2">Fuentes / Gráficos / Simbología</td>
+                                </tr>
+                                <tr>
+                                    <td>Fuentes internas</td>
+                                    <td>8 Fuentes de mapa de bits alfa-numérica, las fuentes de Windows son descargables desde el software</td>
+                                </tr>
+                                <tr>
+                                    <td>Código de barras 1D</td>
+                                    <td>Código 39, Código 93, Código 128UCC, Código 128 ASEETS A, B, C, CODABAR, INTERLADO 2 de 5, EAN-8, EAN-13, EAN-128, UPC-A, UPC-E, EAN y UPC 2 (5) Dígitos complementarios, MSI, Plassy, Poste, Post de China, Data de datos GS1, Código 11</td>
+                                </tr>
+                                <tr>
+                                    <td>Código de barras 2D</td>
+                                    <td>PDF-417, Maxicode, DataMatrix, Código QR, AZTEC</td>
+                                </tr>
+                                <tr>
+                                    <td>Rotación</td>
+                                    <td>0°, 90°, 180°, 270°</td>
+                                </tr>
+                                <tr>
+                                    <td>Emulación</td>
+                                    <td>TSPL, EPL, ZPL, DPL</td>
+                                </tr>
+                                <tr class="category-row">
+                                    <td colspan="2">Características físicas</td>
+                                </tr>
+                                <tr>
+                                    <td>Dimensión</td>
+                                    <td>215 mm (L) x 178 mm (W) x 155 mm (H)</td>
+                                </tr>
+                                <tr>
+                                    <td>Peso</td>
+                                    <td>1 kg</td>
+                                </tr>
+                                <tr class="category-row">
+                                    <td colspan="2">Fiabilidad</td>
+                                </tr>
+                                <tr>
+                                    <td>Garantía</td>
+                                    <td>Un año</td>
+                                </tr>
+                                <tr>
+                                    <td>Cabeza de impresión</td>
+                                    <td>30 km</td>
+                                </tr>
+                                <tr class="category-row">
+                                    <td colspan="2">Software</td>
+                                </tr>
+                                <tr>
+                                    <td>Bartender</td>
+                                    <td>Windows / Android</td>
+                                </tr>
+                                <tr>
+                                    <td>SDK</td>
+                                    <td>Windows / Android / iOS</td>
+                                </tr>
+                                <tr class="category-row">
+                                    <td colspan="2">Fuente de alimentación</td>
+                                </tr>
+                                <tr>
+                                    <td>Entrada fuente</td>
+                                    <td>AC 110-240V</td>
+                                </tr>
+                                <tr>
+                                    <td>Salida fuente</td>
+                                    <td>DC 24V 2.5A</td>
+                                </tr>
+                                <tr class="category-row">
+                                    <td colspan="2">Condiciones ambientales</td>
+                                </tr>
+                                <tr>
+                                    <td>Entorno de operación</td>
+                                    <td>5 ~ 40°C (41 ~ 104°F), Humedad: 25 ~ 85% Sin condensación</td>
+                                </tr>
+                                <tr>
+                                    <td>Entorno de almacenamiento</td>
+                                    <td>-40 ~ 60°C (-40 ~ 140°F), Humedad: 10 ~ 90% Sin condensación</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-col">
+                    <h3>CONTÁCTANOS</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Javier Prado 5268 - Tienda 73<br>
+                    C.C La Fontana - La Molina</p>
+                    <p><i class="fas fa-phone"></i> (01) 4801107 / 990096126</p>
+                    <p><i class="fas fa-envelope"></i> ventas@jpsystems.pe</p>
+                </div>
+                <div class="footer-col">
+                    <h3>ENLACES RÁPIDOS</h3>
+                    <a href="https://jpsystems.pe">Inicio</a>
+                    <a href="https://jpsystems.pe/tienda">Tienda</a>
+                    <a href="https://jpsystems.pe/contactanos">Contáctanos</a>
+                    <a href="https://multijpos.com">Software Gestión MULTIJPOS</a>
+                    <a href="https://jpsystems.pe/distribuidor">Ser Distribuidor</a>
+                </div>
+                <div class="footer-col">
+                    <h3>SÍGUENOS</h3>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/JpSystemsPeru" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <img src="https://jpsystems.pe/wp-content/uploads/2019/11/visa-1.png"
+                             alt="Métodos de pago"
+                             style="max-width: 180px; opacity: 0.7;">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2022. Derechos Reservados - Supply Corp Perú</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Cambiar imagen principal
+        function changeImage(img) {
+            const mainImage = document.getElementById('mainImage');
+            const newSrc = img.src.replace('-300x300', '-600x600').replace('-300x291', '-600x600');
+            mainImage.src = newSrc;
+
+            // Actualizar estado activo de thumbnails
+            document.querySelectorAll('.product-gallery-thumbnails img').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            img.classList.add('active');
+        }
+
+        // Tabs
+        function showTab(e, tabId) {
+            e.preventDefault();
+
+            // Ocultar todos los tabs
+            document.querySelectorAll('.tab-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+
+            // Remover active de los links
+            document.querySelectorAll('.tab-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Mostrar tab seleccionado
+            document.getElementById(tabId).classList.add('active');
+            e.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
