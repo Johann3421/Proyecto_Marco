@@ -131,21 +131,38 @@ body {
 }
 
 /* Image Placeholders */
-.hero-image-placeholder,
-.facultad-image-placeholder,
-.noticia-image-placeholder,
-.investigacion-image-placeholder,
-.admision-image-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
+.hero-image-container,
+.facultad-image-container,
+.noticia-image-container,
+.investigacion-image-container,
+.admision-image-container {
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
-.hover-card:hover .facultad-image-placeholder,
-.hover-card:hover .noticia-image-placeholder {
+.hero-image-container img,
+.facultad-image-container img,
+.noticia-image-container img,
+.investigacion-image-container img,
+.admision-image-container img {
+    transition: transform 0.5s ease;
+}
+
+.hover-card:hover .facultad-image-container img,
+.hover-card:hover .noticia-image-container img {
+    transform: scale(1.1);
+}
+
+.hero-image-container:hover img,
+.admision-image-container:hover img,
+.investigacion-image-container:hover img {
     transform: scale(1.05);
+}
+
+/* Object Fit Support */
+.object-fit-cover {
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Badge Styles */
@@ -204,19 +221,19 @@ section {
         min-height: auto !important;
         padding: 3rem 0;
     }
-    
+
     .display-4 {
         font-size: 2rem;
     }
-    
+
     .display-5 {
         font-size: 1.75rem;
     }
-    
+
     .navbar-brand h4 {
         font-size: 1.25rem;
     }
-    
+
     .stat-card h3 {
         font-size: 2rem;
     }

@@ -22,11 +22,12 @@
                 </div>
             </div>
             <div class="col-lg-6 mt-5 mt-lg-0">
-                <div class="hero-image-placeholder bg-white bg-opacity-10 rounded-3 p-3" style="height: 400px; border: 3px dashed rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center;">
-                    <div class="text-center text-white">
-                        <i class="fas fa-image fa-4x mb-3 opacity-50"></i>
-                        <p class="mb-0">Imagen Hero Principal</p>
-                        <small class="text-white-50">1200 x 800 px</small>
+                <div class="hero-image-container rounded-3 overflow-hidden shadow-lg" style="height: 400px; background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=800&fit=crop&auto=format'); background-size: cover; background-position: center;">
+                    <div class="d-flex align-items-center justify-content-center h-100 text-white text-center p-5">
+                        <div>
+                            <i class="fas fa-graduation-cap fa-5x mb-3 opacity-50"></i>
+                            <h3 class="fw-bold">Estudiantes UNMSM</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,12 +95,21 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 shadow-sm hover-card">
                     <div class="card-body text-center">
-                        <div class="facultad-image-placeholder bg-light rounded mb-3" style="height: 200px; border: 2px dashed #dee2e6; display: flex; align-items: center; justify-content: center;">
-                            <div class="text-muted">
-                                <i class="fas fa-image fa-3x mb-2"></i>
-                                <p class="mb-0 small">Imagen Facultad</p>
-                                <small class="text-muted">800 x 600 px</small>
-                            </div>
+                        <div class="facultad-image-container rounded mb-3 overflow-hidden" style="height: 200px;">
+                            @php
+                            $imagenes_facultades = [
+                                'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&h=600&fit=crop&auto=format', // Medicina
+                                'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&auto=format', // Ingeniería
+                                'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop&auto=format', // Derecho
+                                'https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&h=600&fit=crop&auto=format', // Ciencias Sociales
+                                'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop&auto=format', // Sistemas
+                                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&auto=format', // Economía
+                            ];
+                            @endphp
+                            <img src="{{ $imagenes_facultades[$loop->index] }}"
+                                 alt="{{ $facultad['nombre'] }}"
+                                 class="w-100 h-100 object-fit-cover"
+                                 loading="lazy">
                         </div>
                         <div class="mb-3">
                             <i class="fas {{ $facultad['icono'] }} fa-3x text-{{ $facultad['color'] }}"></i>
@@ -120,12 +130,11 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <div class="admision-image-placeholder bg-white bg-opacity-10 rounded-3" style="height: 350px; border: 3px dashed rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center;">
-                    <div class="text-center">
-                        <i class="fas fa-image fa-4x mb-3 opacity-50"></i>
-                        <p class="mb-0">Imagen Admisión</p>
-                        <small class="opacity-75">900 x 600 px</small>
-                    </div>
+                <div class="admision-image-container rounded-3 overflow-hidden shadow-lg" style="height: 350px;">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&h=600&fit=crop&auto=format"
+                         alt="Proceso de Admisión"
+                         class="w-100 h-100 object-fit-cover"
+                         loading="lazy">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -177,12 +186,18 @@
             @foreach($noticias as $noticia)
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 shadow-sm hover-card">
-                    <div class="noticia-image-placeholder bg-light" style="height: 250px; border-bottom: 2px dashed #dee2e6; display: flex; align-items: center; justify-content: center;">
-                        <div class="text-center text-muted">
-                            <i class="fas fa-image fa-3x mb-2"></i>
-                            <p class="mb-0 small">Imagen Noticia</p>
-                            <small class="text-muted">800 x 500 px</small>
-                        </div>
+                    <div class="noticia-image-container overflow-hidden" style="height: 250px;">
+                        @php
+                        $imagenes_noticias = [
+                            'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=500&fit=crop&auto=format', // Universidad
+                            'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=500&fit=crop&auto=format', // Investigación
+                            'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=500&fit=crop&auto=format', // Internacional
+                        ];
+                        @endphp
+                        <img src="{{ $imagenes_noticias[$loop->index] }}"
+                             alt="{{ $noticia['titulo'] }}"
+                             class="w-100 h-100 object-fit-cover"
+                             loading="lazy">
                     </div>
                     <div class="card-body">
                         <span class="badge bg-primary mb-2">{{ $noticia['categoria'] }}</span>
@@ -204,12 +219,11 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
-                <div class="investigacion-image-placeholder bg-white rounded-3" style="height: 400px; border: 3px dashed #dee2e6; display: flex; align-items: center; justify-content: center;">
-                    <div class="text-center text-muted">
-                        <i class="fas fa-image fa-4x mb-3"></i>
-                        <p class="mb-0">Imagen Investigación</p>
-                        <small>900 x 600 px</small>
-                    </div>
+                <div class="investigacion-image-container rounded-3 overflow-hidden shadow-lg" style="height: 400px;">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=900&h=600&fit=crop&auto=format"
+                         alt="Investigación e Innovación"
+                         class="w-100 h-100 object-fit-cover"
+                         loading="lazy">
                 </div>
             </div>
             <div class="col-lg-6 order-lg-1">

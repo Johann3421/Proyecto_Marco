@@ -47,8 +47,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-                <div class="logo-placeholder bg-light rounded me-3" style="width: 60px; height: 60px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center;">
-                    <small class="text-muted">Logo</small>
+                <div class="logo-container bg-gradient rounded-circle me-3 shadow-sm" style="width: 60px; height: 60px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-university text-white" style="font-size: 28px;"></i>
                 </div>
                 <div>
                     <h4 class="mb-0 fw-bold text-primary">UNMSM</h4>
