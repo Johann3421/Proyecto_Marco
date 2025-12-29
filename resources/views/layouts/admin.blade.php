@@ -176,6 +176,37 @@
                             </ul>
                         </li>
 
+                        <!-- Académico -->
+                        <li class="nav-item {{ request()->routeIs('admin.academico.*') ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ request()->routeIs('admin.academico.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-graduation-cap"></i>
+                                <p>
+                                    Académico
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.academico.facultades.index') }}" class="nav-link {{ request()->routeIs('admin.academico.facultades.*') ? 'active' : '' }}">
+                                        <i class="fas fa-university nav-icon"></i>
+                                        <p>Facultades</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.academico.escuelas.index') }}" class="nav-link {{ request()->routeIs('admin.academico.escuelas.*') ? 'active' : '' }}">
+                                        <i class="fas fa-graduation-cap nav-icon"></i>
+                                        <p>Escuelas Profesionales</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.academico.posgrado.index') }}" class="nav-link {{ request()->routeIs('admin.academico.posgrado.*') ? 'active' : '' }}">
+                                        <i class="fas fa-user-graduate nav-icon"></i>
+                                        <p>Posgrado</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="nav-header">CONFIGURACIÓN</li>
 
                         <!-- Usuarios -->

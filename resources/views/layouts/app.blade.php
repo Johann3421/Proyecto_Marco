@@ -80,9 +80,9 @@
                             Académico
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Facultades</a></li>
-                            <li><a class="dropdown-item" href="#">Escuelas Profesionales</a></li>
-                            <li><a class="dropdown-item" href="#">Posgrado</a></li>
+                            <li><a class="dropdown-item" href="{{ route('academico.facultades') }}">Facultades</a></li>
+                            <li><a class="dropdown-item" href="{{ route('academico.escuelas') }}">Escuelas Profesionales</a></li>
+                            <li><a class="dropdown-item" href="{{ route('academico.posgrado') }}">Posgrado</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
