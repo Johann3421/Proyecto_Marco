@@ -70,9 +70,9 @@
                             Universidad
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Historia</a></li>
-                            <li><a class="dropdown-item" href="#">Autoridades</a></li>
-                            <li><a class="dropdown-item" href="#">Misión y Visión</a></li>
+                            <li><a class="dropdown-item" href="{{ route('universidad.historia') }}">Historia</a></li>
+                            <li><a class="dropdown-item" href="{{ route('universidad.autoridades') }}">Autoridades</a></li>
+                            <li><a class="dropdown-item" href="{{ route('universidad.mision-vision') }}">Misión y Visión</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
